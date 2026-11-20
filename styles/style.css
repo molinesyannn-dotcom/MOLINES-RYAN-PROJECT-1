@@ -1,0 +1,854 @@
+
+/* =================================================
+   RYAN MOLINES | DEVELOPER PORTFOLIO
+   MATRIX CODING THEME
+   Professional | Animated | Responsive
+================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600;700&display=swap');
+
+/* GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg: #030812;
+    --second-bg: #071323;
+    --card: rgba(8, 25, 38, 0.88);
+    --green: #00ff99;
+    --cyan: #00d9ff;
+    --text: #ffffff;
+    --muted: #a9bdc9;
+    --border: rgba(0, 255, 153, 0.22);
+}
+
+html {
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    position: relative;
+    isolation: isolate;
+}
+
+a {
+    text-decoration: none;
+}
+
+span {
+    color: var(--green);
+}
+
+section {
+    padding: 110px 9%;
+    scroll-margin-top: 75px;
+    position: relative;
+}
+
+/* =================================
+   MATRIX BACKGROUND
+================================= */
+
+#matrix-bg {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.48;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(
+            circle at 15% 25%,
+            rgba(0, 255, 153, 0.09),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(0, 217, 255, 0.08),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(3, 8, 18, 0.78),
+            rgba(3, 15, 25, 0.82)
+        );
+}
+
+/* HEADINGS */
+.heading {
+    text-align: center;
+    font-size: clamp(30px, 4vw, 43px);
+    font-weight: 800;
+    margin-bottom: 60px;
+}
+
+.heading span {
+    color: var(--green);
+    text-shadow: 0 0 15px rgba(0,255,153,.4);
+}
+
+/* =================================
+   NAVBAR
+================================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 18px 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(3, 8, 18, 0.90);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--green);
+}
+
+nav {
+    display: flex;
+    gap: 27px;
+}
+
+nav a {
+    color: #d7e9e8;
+    font-size: 13px;
+    transition: .3s;
+    position: relative;
+}
+
+nav a:hover {
+    color: var(--green);
+    text-shadow: 0 0 12px var(--green);
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--green);
+    left: 0;
+    bottom: -7px;
+    transition: .3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* =================================
+   HOME
+================================= */
+
+.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    padding-top: 130px;
+}
+
+.home-content {
+    max-width: 650px;
+    animation: slideLeft 1s ease both;
+}
+
+.home-content h3 {
+    color: var(--green);
+    font-family: 'Fira Code', monospace;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.home-content h1 {
+    font-size: clamp(40px, 5.5vw, 68px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 18px 0;
+}
+
+.home-content h1 span {
+    color: var(--green);
+    text-shadow: 0 0 25px rgba(0,255,153,.4);
+}
+
+.home-content h2 {
+    color: var(--cyan);
+    font-size: 25px;
+}
+
+.home-content p {
+    color: var(--muted);
+    line-height: 2;
+    font-size: 14px;
+    margin: 25px 0 30px;
+}
+
+/* =================================
+   BUTTONS
+================================= */
+
+.home-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 30px;
+    border-radius: 8px;
+    background: var(--green);
+    color: #03120d;
+    font-size: 13px;
+    font-weight: 700;
+    border: 1px solid var(--green);
+    transition: .35s;
+    box-shadow: 0 0 15px rgba(0,255,153,.15);
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--green);
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(0,255,153,.35);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--green);
+}
+
+.btn-outline:hover {
+    background: var(--green);
+    color: #03120d;
+}
+
+/* =================================
+   PROFILE IMAGE
+================================= */
+
+.home-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    animation: slideRight 1s ease both;
+}
+
+.image-border {
+    width: 340px;
+    height: 340px;
+    padding: 7px;
+    border-radius: 25px;
+    background: linear-gradient(
+        135deg,
+        var(--green),
+        var(--cyan)
+    );
+    box-shadow:
+        0 0 25px rgba(0,255,153,.3),
+        0 0 60px rgba(0,217,255,.15);
+    animation: floating 4s ease-in-out infinite;
+}
+
+.image-border img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+    border: 4px solid var(--bg);
+}
+
+/* =================================
+   ABOUT
+================================= */
+
+.about {
+    background: rgba(5, 17, 29, .80);
+    backdrop-filter: blur(8px);
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 65px;
+}
+
+.about-image {
+    width: 310px;
+    height: 390px;
+    flex-shrink: 0;
+    padding: 7px;
+    border-radius: 20px;
+    background: linear-gradient(
+        135deg,
+        var(--green),
+        var(--cyan)
+    );
+    box-shadow: 0 0 30px rgba(0,255,153,.2);
+    transition: .4s;
+}
+
+.about-image:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 40px rgba(0,255,153,.4);
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.about-content {
+    max-width: 600px;
+}
+
+.about-content h3 {
+    color: var(--green);
+    font-family: 'Fira Code', monospace;
+}
+
+.about-content h2 {
+    font-size: 34px;
+    margin: 12px 0;
+}
+
+.about-content h4 {
+    color: var(--cyan);
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 2;
+    margin-bottom: 25px;
+}
+
+/* =================================
+   EDUCATION
+================================= */
+
+.education {
+    background: transparent;
+}
+
+.education-container {
+    max-width: 850px;
+    margin: auto;
+    display: grid;
+    gap: 25px;
+}
+
+.education-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    padding: 30px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--green);
+    border-radius: 15px;
+    backdrop-filter: blur(12px);
+    transition: .35s;
+}
+
+.education-card:hover {
+    transform: translateX(8px);
+    box-shadow: 0 0 25px rgba(0,255,153,.15);
+}
+
+.education-icon {
+    min-width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    background: rgba(0,255,153,.10);
+    border-radius: 12px;
+}
+
+.education-content {
+    flex: 1;
+}
+
+.education-status {
+    display: inline-block;
+    color: var(--green);
+    background: rgba(0,255,153,.10);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.education-content h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.education-content h4 {
+    color: var(--cyan);
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.education-content p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* =================================
+   HOBBIES
+================================= */
+
+.hobbies {
+    background: rgba(5, 17, 29, .80);
+    backdrop-filter: blur(8px);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    padding: 38px 25px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    text-align: center;
+    transition: .4s;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        var(--green),
+        var(--cyan)
+    );
+    transition: .5s;
+}
+
+.card:hover::before {
+    left: 0;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--green);
+    box-shadow: 0 0 25px rgba(0,255,153,.15);
+}
+
+.emoji {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    color: var(--green);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* =================================
+   SKILLS
+================================= */
+
+.skills {
+    background: transparent;
+}
+
+.skills-container {
+    max-width: 750px;
+    margin: auto;
+    padding: 40px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    backdrop-filter: blur(15px);
+}
+
+.skill-box {
+    margin-bottom: 28px;
+}
+
+.skill-box:last-child {
+    margin-bottom: 0;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.skill-info h3 {
+    font-size: 14px;
+}
+
+.skill-info span {
+    color: var(--green);
+    font-size: 12px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #1c3440;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-bar span {
+    display: block;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        var(--green),
+        var(--cyan)
+    );
+    border-radius: 20px;
+    animation: skillLoad 1.8s ease;
+    box-shadow: 0 0 15px rgba(0,255,153,.5);
+}
+
+/* =================================
+   CONTACT
+================================= */
+
+.contact {
+    text-align: center;
+    background: rgba(5, 17, 29, .55);
+}
+
+.contact p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+/* =================================
+   FOOTER
+================================= */
+
+footer {
+    padding: 35px 15px;
+    text-align: center;
+    background: rgba(2, 7, 15, .95);
+    border-top: 1px solid var(--border);
+}
+
+footer h3 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 12px;
+    margin: 6px;
+}
+
+/* =================================
+   ANIMATIONS
+================================= */
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes skillLoad {
+    from {
+        width: 0;
+    }
+}
+
+/* =================================
+   RESPONSIVE TABLET
+================================= */
+
+@media (max-width: 1000px) {
+    section {
+        padding: 100px 6%;
+    }
+
+    .home {
+        gap: 30px;
+    }
+
+    .image-border {
+        width: 280px;
+        height: 280px;
+    }
+
+    .about-container {
+        gap: 35px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =================================
+   RESPONSIVE MOBILE
+================================= */
+
+@media (max-width: 768px) {
+    section {
+        padding: 95px 6%;
+    }
+
+    header {
+        padding: 14px 5%;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 13px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .home {
+        flex-direction: column-reverse;
+        text-align: center;
+        justify-content: center;
+        gap: 35px;
+        padding-top: 165px;
+    }
+
+    .home-content {
+        max-width: 100%;
+    }
+
+    .home-content h1 {
+        font-size: clamp(35px, 8vw, 48px);
+    }
+
+    .home-content h3 {
+        font-size: 14px;
+    }
+
+    .home-content h2 {
+        font-size: 22px;
+    }
+
+    .home-content p {
+        font-size: 13px;
+    }
+
+    .home-buttons {
+        justify-content: center;
+    }
+
+    .image-border {
+        width: 230px;
+        height: 230px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image {
+        width: 260px;
+        height: 320px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .education-card {
+        padding: 22px 18px;
+        gap: 15px;
+    }
+
+    .education-icon {
+        min-width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    .skills-container {
+        padding: 25px 18px;
+    }
+
+    .heading {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 400px) {
+    nav {
+        gap: 9px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .image-border {
+        width: 200px;
+        height: 200px;
+    }
+
+    .education-card {
+        flex-direction: column;
+    }
+
+    .home-content h1 {
+        font-size: 34px;
+    }
+}
+
+/* ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* =========================================
+   ANIMATED MATRIX BACKGROUND
+========================================= */
+
+#matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.45;
+}
+
+/* Extra glowing effects */
+
+body {
+    background: #030812;
+    position: relative;
+    isolation: isolate;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 15% 25%,
+            rgba(0, 255, 153, 0.09),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(0, 217, 255, 0.08),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(3, 8, 18, 0.45),
+            rgba(3, 15, 25, 0.55)
+        );
+}
