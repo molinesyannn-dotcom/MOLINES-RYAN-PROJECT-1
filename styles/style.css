@@ -809,24 +809,32 @@ footer p {
    ANIMATED MATRIX BACKGROUND
 ========================================= */
 
+
+/* =========================================
+   GLOWING MATRIX BACKGROUND
+   Neon Green | Cyan | Cyber Effect
+========================================= */
+
 #matrix-bg {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: -2;
     pointer-events: none;
-    opacity: 0.45;
+    opacity: 0.85;
 }
 
-/* Extra glowing effects */
+/* Dark cyber background */
 
 body {
-    background: #030812;
+    background: #02070d;
     position: relative;
     isolation: isolate;
+    overflow-x: hidden;
 }
+
+/* Glowing atmosphere */
 
 body::before {
     content: "";
@@ -837,18 +845,56 @@ body::before {
 
     background:
         radial-gradient(
-            circle at 15% 25%,
-            rgba(0, 255, 153, 0.09),
+            circle at 15% 20%,
+            rgba(0, 255, 100, 0.20),
             transparent 35%
         ),
         radial-gradient(
-            circle at 85% 75%,
-            rgba(0, 217, 255, 0.08),
+            circle at 85% 30%,
+            rgba(0, 220, 255, 0.16),
             transparent 35%
+        ),
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(0, 255, 153, 0.12),
+            transparent 40%
         ),
         linear-gradient(
             135deg,
-            rgba(3, 8, 18, 0.45),
-            rgba(3, 15, 25, 0.55)
+            rgba(0, 5, 12, 0.65),
+            rgba(0, 15, 20, 0.55)
         );
+}
+
+/* Neon glowing light spots */
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 255, 153, 0.08) 1px,
+            transparent 2px
+        );
+
+    background-size: 35px 35px;
+
+    animation: matrixGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes matrixGlow {
+    0% {
+        opacity: 0.25;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0.8;
+        transform: translateY(-15px);
+    }
 }
